@@ -1,0 +1,161 @@
+/* Global reset & font */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Base typography */
+body {
+  line-height: 1.6;
+}
+
+/* Header bar styling */
+header {
+  background: #333;
+  color: #fff;
+}
+
+/* Navbar flex layout */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* Logo text size */
+.logo {
+  font-size: 1.5rem;
+}
+
+/* Nav list container */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+/* Nav link appearance */
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* drop down(mobile) */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Books grid container */
+.book-list {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+
+  /* one column (mobile) */
+  grid-template-columns: 1fr;
+}
+
+/* Desktop two-column */
+@media (min-width: 600px) {
+  .book-list {
+    grid-template-columns: repeat(2, 1fr); /* two equal columns */
+  }
+}
+
+/* Book card block */
+.book {
+  display: flex;
+  gap: 1rem;
+  background: #f4f4f4;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Book cover image */
+.book img {
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Primary buttons */
+.pay-button,
+.button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #333;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}
+
+/* Form label layout */
+form label {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+/* Form input field */
+form input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Responsive navigation */
+#nav-toggle {
+  display: none;
+}
+
+/* Mobile nav & cards */
+@media (max-width: 600px) {
+  /* Nav list container (mobile) */
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #333;
+    flex-direction: column;
+    width: 200px;
+    display: none;
+    padding: 1rem;
+  }
+
+  /* Nav list item */
+  .nav-links li {
+    margin-bottom: 1rem;
+  }
+
+  /* Reveal nav when checked */
+  #nav-toggle:checked + .hamburger + .nav-links {
+    display: flex;
+  }
+
+  /* Show hamburger mobile */
+  .hamburger {
+    display: block;
+    color: #fff;
+  }
+
+  /* Stack card vertically */
+  .book {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Full-width cover */
+  .book img {
+    width: 100%;
+  }
+}

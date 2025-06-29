@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">Mr Khan's Bookshop</a>
+      <input type="checkbox" id="nav-toggle">
+      <label for="nav-toggle" class="hamburger">&#9776;</label>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Secure Payment</h1>
+    <form id="payment-form" novalidate>
+      <label>
+        Card Number
+        <input type="text" id="card-number" maxlength="19" placeholder="XXXX XXXX XXXX XXXX" required>
+      </label>
+      <label>
+        Expiry Month
+        <input type="number" id="exp-month" min="1" max="12" placeholder="MM" required>
+      </label>
+      <label>
+        Expiry Year
+        <input type="number" id="exp-year" min="2025" placeholder="YYYY" required>
+      </label>
+      <label>
+        CVV
+        <input type="password" id="cvv" maxlength="4" placeholder="123" required>
+      </label>
+      <button type="submit">Continue</button>
+    </form>
+    <div id="payment-message" role="alert"></div>
+  </main>
+</body>
+</html>
